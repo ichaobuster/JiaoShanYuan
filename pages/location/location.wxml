@@ -1,0 +1,54 @@
+<view class="main-container">
+  <view class="topbar">
+    <view class='search-item search-bar'>
+      <icon type="search" size="16" />
+      <input placeholder="输入城市名或拼音查询" bindinput="filterCities" />
+    </view>
+    <view class="text-radio">
+      <view class="nav-item" bindtap="selectInternal">
+        <text style="color:{{internal?'#fddda6':'#fff'}}">国内</text>
+        <view class="mark" style="opacity:{{internal?1:0}}"></view>
+      </view>
+      <view class="nav-item" bindtap="selectExternal">
+        <text style="color:{{internal?'#fff':'#fddda6'}}">国际/港澳台</text>
+        <view class="mark" style="opacity:{{internal?0:1}}"></view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <scroll-view scroll-y class="content-view" scroll-into-view="{{scrollIntoView}}">
+      <block wx:if="{{internal && curCity}}">
+        <view class="current-city" data-city="{{curCity}}" bindtap="chooseCity">
+          <image src="/assets/icons/location.png"></image>
+          <text class="city-name">{{curCity.name}}</text>
+          <text class="remark">定位信息</text>
+        </view>
+      </block>
+      <block wx:if="{{hotCities.length>0}}">
+        <view id="catalog-hot" class="hot-cities-container">
+          <text class="remark">{{internal?'国内':'国际/港澳台'}}热门城市</text>
+          <view class="hot-cities">
+            <block wx:for="{{hotCities}}" wx:key="label">
+              <view class="hot-city-text" data-city="{{item}}" bindtap="chooseCity">
+                <text>{{item.name}}</text>
+              </view>
+            </block>
+          </view>
+        </view>
+      </block>
+      <block wx:for="{{cities}}" wx:key="label">
+        <view id="catalog-{{item.label}}" class="{{item.catalog?'catalog-item':'city-list-item'}}" data-city="{{item}}" bindtap="chooseCity">
+          <text>{{item.name}}</text>
+        </view>
+      </block>
+    </scroll-view>
+    <view class="scroll-list" catchtouchstart="touchStartScrollList" catchtouchmove="touchMoveScrollList">
+      <block wx:for="{{scrollList}}" wx:key="name">
+        <view>
+          <text data-catalog="{{item}}" catchtap="scrollToCatalog">{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+</view>

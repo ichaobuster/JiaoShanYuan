@@ -1,0 +1,64 @@
+<!--index.wxml-->
+<view class="index-container">
+  <view class="topbar">
+    <view class="topbar-items">
+      <view class="subitem" bindtap="chooseLocation">
+        <text>{{selectedCity.name}}</text>
+        <image src="/assets/icons/dropdown.png" mode="aspectFit" />
+      </view>
+      <view class='search-item'>
+        <icon type="search" size="16" />
+        <input placeholder="附近热门" />
+      </view>
+      <image src="/assets/icons/scan.png" mode="aspectFit" bindtap="scanCode"></image>
+    </view>
+
+  </view>
+  <scroll-view scroll-y class="content-view">
+    <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+      <block wx:for="{{swiperImgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" mode="widthFix" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view>
+      <view class="filter-bar">
+        <button>综合排序</button>
+        <button>距离最近</button>
+      </view>
+      <view class="detail-items">
+        <block wx:for="{{detailItems}}" wx:key="id">
+          <view class="detail-container">
+            <image src="{{item.image}}" mode="aspectFit" />
+            <view class="detail-info">
+              <view class="detail-name">
+                <text wx:if="{{item.hot}}" class="hot-text">热门</text>
+                <text>{{item.name}}</text>
+              </view>
+              <view class="detail-stars">
+                <view class="detail-stars-container">
+                  <block wx:for="{{item.starsDetail}}" wx:for-item="detail">
+                    <text wx:if="{{detail==1}}" class="star-one">★</text>
+                    <text wx:if="{{detail==0}}" class="star-zero">★</text>
+                  </block>
+                </view>
+                <text class="detail-stars-score">{{item.stars}}</text>
+              </view>
+              <view class="detail-location">
+                <text class="location-name">{{item.location}}</text>
+                <text class="location-distance">{{item.distance}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="detail-buttons">
+            <button hover-class="detail-button-hover">灾害救助</button>
+            <button hover-class="detail-button-hover">公益讲座</button>
+            <button hover-class="detail-button-hover">捐资助学</button>
+          </view>
+        </block>
+      </view>
+    </view>
+  </scroll-view>
+
+</view>

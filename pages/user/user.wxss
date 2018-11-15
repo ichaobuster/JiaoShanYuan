@@ -1,0 +1,107 @@
+Page {
+  background: #f2f2f1;
+  width: 100%;
+  height: 100%;
+}
+
+.main-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.topbar {
+  background: #c00000;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  height: 12vh;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
+}
+
+.userinfo .userinfo-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 0 0 48rpx;
+}
+
+.userinfo .userinfo-avatar {
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+}
+
+.userinfo .userinfo-texts {
+  color: #fff;
+  font-size: 32rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 0 0 36rpx;
+}
+
+.userinfo .phone-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.userinfo .phone-view image{
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.wallet-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background: #fff;
+  padding: 24rpx 0 24rpx 0;
+  font-size: 32rpx;
+}
+
+.wallet-container .wallet-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wallet-container .wallet-detail .balance {
+  color: #ff5140;
+}
+
+.wallet-container .wallet-detail .hongbao {
+  color: #ff9540;
+}
+
+.func-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  margin: 24rpx 0 0 0;
+  padding: 24rpx;
+  font-size: 32rpx;
+}
+
+.func-list image{
+  width: 32rpx;
+  height: 32rpx;
+}

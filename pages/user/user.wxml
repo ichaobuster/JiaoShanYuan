@@ -1,0 +1,41 @@
+<view class="main-container">
+  <view class="topbar">
+    <view class="userinfo">
+      <button size="mini" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">点击授权</button>
+      <block wx:else>
+        <view class="userinfo-detail">
+          <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+          <view class="userinfo-texts">
+            <text>{{userInfo.nickName}}</text>
+            <view class="phone-view">
+              <image src="/assets/icons/phone.png"></image>
+              <text>{{walletInfo.phone}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <block wx:if="{{hasUserInfo}}">
+    <view class="wallet-container">
+      <view class="wallet-detail">
+        <text class="balance">{{walletInfo.balance}} 元</text>
+        <text>余额</text>
+      </view>
+      <view class="wallet-detail">
+        <text class="hongbao">{{walletInfo.hongbao}} 个</text>
+        <text>红包</text>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{hasUserInfo}}">
+    <view class="func-list">
+      <text>我的心意卡</text>
+      <image class="func-icon" src="/assets/icons/right.png"></image>
+    </view>
+  </block>
+  <view class="func-list">
+    <text>服务中心</text>
+    <image class="func-icon" src="/assets/icons/right.png"></image>
+  </view>
+</view>

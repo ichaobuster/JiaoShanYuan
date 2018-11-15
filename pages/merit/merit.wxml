@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="main-container">
+  <block wx:for="{{meritList}}" wx:key="id">
+    <view class="merit-item">
+      <block wx:if="{{item.status === 0}}">
+        <view class="not-payed-mark">
+          <text>未支付</text>
+        </view>
+      </block>
+      <view class="merit-item-inner">
+        <view class="line">
+          <text class="type-text">{{item.type}}</text>
+          <text class="small-text">{{item.time}}</text>
+        </view>
+        <view class="line">
+          <text class="small-text">功德金额：</text>
+          <view class='sum-container'>
+            <text class="sum-text">{{item.sum}}</text>
+            <text class="rmb-text">元</text>
+          </view>
+        </view>
+      </view>
+      
+    </view>
+  </block>
+  <block wx:if="{{!meritList || meritList.length == 0}}">
+    <view class="no-info-container">
+      <text>暂时没有支付信息</text>
+    </view>
+  </block>
+</view>

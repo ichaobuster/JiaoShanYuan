@@ -1,0 +1,82 @@
+Page {
+  background: #fddda6;
+  width: 100%;
+  height: 100%;
+}
+
+.main-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  background: #fddda6;
+} 
+
+.no-info-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.merit-item {
+  width: 86vw;
+  background: #fff;
+  border-radius: 10rpx;
+  border: 0 solid #fff;
+  margin: 20rpx;
+  padding: 24rpx;
+}
+
+.merit-item-inner {
+  background: #fff;
+  border: 2rpx solid #c5a37b;
+  height: 100%;
+}
+
+.merit-item .line{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12rpx 48rpx 12rpx 48rpx;
+}
+
+.merit-item .line .type-text{
+  font-size: 32rpx;
+}
+
+.merit-item .line .small-text{
+  font-size: 24rpx;
+  color: #838383;
+}
+
+.merit-item .line .sum-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+
+.merit-item .line .sum-text{
+  font-size: 48rpx;
+  color: #d20101;
+}
+
+.merit-item .line .rmb-text{
+  font-size: 28rpx;
+  color: #d20101;
+}
+
+.merit-item .not-payed-mark {
+  position: absolute;
+  font-size: 28rpx;
+  line-height: 1.1em;
+  width: 1.2em;
+  padding: 8rpx 0 8rpx 0;
+  text-align: center;
+  background: #d20101;
+  color: #fff;
+}
