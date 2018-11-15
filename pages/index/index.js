@@ -1,12 +1,12 @@
 //index.js
 //获取应用实例
 const app = getApp()
-const keys = require('../../keys.js');
-const QQMapWX = require('../../libs/qqmap-wx-jssdk.min.js');
+const keys = require('../../keys.js')
+const QQMapWX = require('../../libs/qqmap-wx-jssdk.min.js')
 const qqmapsdk = new QQMapWX({
   key: keys.qqMapKey,
-});
-const cityData = require('../../utils/china-cities.js'); 
+})
+const cityData = require('../../utils/china-cities.js')
 
 Page({
   data: {

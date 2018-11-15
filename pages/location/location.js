@@ -1,5 +1,5 @@
 // pages/index/location.js
-const cityData = require('../../utils/china-cities.js');
+const cityData = require('../../utils/china-cities.js')
 
 Page({
 
