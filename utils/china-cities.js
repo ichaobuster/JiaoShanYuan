@@ -1,4 +1,5 @@
-const cities = [
+var catalog = false
+var cities = [
   { label: "北京Beijing010", name: "北京", pinyin: "Beijing", zip: "010", hot: true },
   { label: "重庆Chongqing023", name: "重庆", pinyin: "Chongqing", zip: "023", hot: true },
   { label: "上海Shanghai021", name: "上海", pinyin: "Shanghai", zip: "021" },
@@ -950,5 +951,5 @@ const cities = [
 
 module.exports = {
   cities,
-  catalog: false,
+  catalog,
 }
